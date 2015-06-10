@@ -45,30 +45,33 @@ namespace scanneurReseauLocal
 
         private void btnLancerLeScan_Click(object sender, EventArgs e)
         {
+            lancerScan();
+        }
+        public void lancerScan()
+        {
             lblAdresseTestee.Visible = true;
             lblAvancement.Visible = true;
 
+            Ping pingSender = new Ping();
+            PingOptions options = new PingOptions();
+            options.DontFragment = true;
 
-            MessageBox.Show("Lancement de la recherche");
+            String data = new String('a', 32);
+            byte[] buffer = Encoding.ASCII.GetBytes(data);
+            int timeout = 10;
+
             for (int i = 0; i <= 255; ++i)
             {
                 //MessageBox.Show("Boucle occurence " + i);
+
+                //MessageBox.Show("Occurence " + i);
+                String adresse = "192.168.1." + i;
+                lblAdresseTestee.Text = "Adresse testée : " + adresse;
+                int avancementInt = i + 1;
+                lblAvancement.Text = "Avancement " + avancementInt + " / 256";
+                Form.ActiveForm.Refresh();
                 try
                 {
-                    //MessageBox.Show("Occurence " + i);
-                    String adresse = "192.168.1." + i;
-                    lblAdresseTestee.Text = "Adresse testée : " + adresse;
-                    lblAvancement.Text = "Avancement "+ i + " / 255";
-
-
-                    Ping pingSender = new Ping();
-                    PingOptions options = new PingOptions();
-                    options.DontFragment = true;
-
-                    String data = new String('a', 32);
-                    byte[] buffer = Encoding.ASCII.GetBytes(data);
-                    int timeout = 120;
-                    
 
                     IPHostEntry entry = Dns.GetHostEntry(adresse);
                     PingReply reply = pingSender.Send(entry.AddressList[0], timeout, buffer, options);
@@ -77,7 +80,6 @@ namespace scanneurReseauLocal
                     {
                         dgvInfosMachines.Rows.Add(adresse, "Nom de machine inconnu");
                     }
-
                 }
                 catch (Exception exc)
                 {
