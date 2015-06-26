@@ -7,3 +7,12 @@ c:\documents\visual studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal
 c:\documents\visual studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.csproj.GenerateResource.Cache
 c:\documents\visual studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.exe
 c:\documents\visual studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.pdb
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\bin\Debug\scanneurReseauLocal.exe.config
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.exe
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.pdb
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\bin\Debug\scanneurReseauLocal.exe
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\bin\Debug\scanneurReseauLocal.pdb
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.csprojResolveAssemblyReference.cache
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.scanneurReseauLocal.resources
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.Properties.Resources.resources
+C:\Users\Gregoire\Documents\Visual Studio 2013\Projects\scanneurReseauLocal\scanneurReseauLocal\obj\Debug\scanneurReseauLocal.csproj.GenerateResource.Cache

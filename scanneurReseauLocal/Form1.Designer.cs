@@ -33,14 +33,15 @@
             this.lblVotreIp = new System.Windows.Forms.Label();
             this.lblPasserelle = new System.Windows.Forms.Label();
             this.dgvInfosMachines = new System.Windows.Forms.DataGridView();
-            this.btnRechargerInfosDeSaConfig = new System.Windows.Forms.Button();
-            this.txbPasserelle = new System.Windows.Forms.TextBox();
             this.ldgvIp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ldgvNomMachine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRechargerInfosDeSaConfig = new System.Windows.Forms.Button();
+            this.txbPasserelle = new System.Windows.Forms.TextBox();
             this.lblNomMachine = new System.Windows.Forms.Label();
             this.txbNomMachine = new System.Windows.Forms.TextBox();
             this.lblAdresseTestee = new System.Windows.Forms.Label();
             this.lblAvancement = new System.Windows.Forms.Label();
+            this.lblPasserelleCachee = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfosMachines)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +92,16 @@
             this.dgvInfosMachines.TabIndex = 5;
             this.dgvInfosMachines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // ldgvIp
+            // 
+            this.ldgvIp.HeaderText = "Ip de la machine";
+            this.ldgvIp.Name = "ldgvIp";
+            // 
+            // ldgvNomMachine
+            // 
+            this.ldgvNomMachine.HeaderText = "Nom de la machine";
+            this.ldgvNomMachine.Name = "ldgvNomMachine";
+            // 
             // btnRechargerInfosDeSaConfig
             // 
             this.btnRechargerInfosDeSaConfig.Location = new System.Drawing.Point(299, 149);
@@ -106,16 +117,6 @@
             this.txbPasserelle.Name = "txbPasserelle";
             this.txbPasserelle.Size = new System.Drawing.Size(100, 20);
             this.txbPasserelle.TabIndex = 7;
-            // 
-            // ldgvIp
-            // 
-            this.ldgvIp.HeaderText = "Ip de la machine";
-            this.ldgvIp.Name = "ldgvIp";
-            // 
-            // ldgvNomMachine
-            // 
-            this.ldgvNomMachine.HeaderText = "Nom de la machine";
-            this.ldgvNomMachine.Name = "ldgvNomMachine";
             // 
             // lblNomMachine
             // 
@@ -149,11 +150,20 @@
             this.lblAvancement.Size = new System.Drawing.Size(0, 13);
             this.lblAvancement.TabIndex = 11;
             // 
+            // lblPasserelleCachee
+            // 
+            this.lblPasserelleCachee.AutoSize = true;
+            this.lblPasserelleCachee.Location = new System.Drawing.Point(446, 92);
+            this.lblPasserelleCachee.Name = "lblPasserelleCachee";
+            this.lblPasserelleCachee.Size = new System.Drawing.Size(0, 13);
+            this.lblPasserelleCachee.TabIndex = 12;
+            // 
             // scanneurReseauLocal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 542);
+            this.Controls.Add(this.lblPasserelleCachee);
             this.Controls.Add(this.lblAvancement);
             this.Controls.Add(this.lblAdresseTestee);
             this.Controls.Add(this.lblNomMachine);
@@ -190,6 +200,7 @@
         private System.Windows.Forms.TextBox txbNomMachine;
         private System.Windows.Forms.Label lblAdresseTestee;
         private System.Windows.Forms.Label lblAvancement;
+        private System.Windows.Forms.Label lblPasserelleCachee;
     }
 }
 

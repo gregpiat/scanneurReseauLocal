@@ -27,12 +27,13 @@ namespace scanneurReseauLocal
 
         private void scanneurReseauLocal_Load(object sender, EventArgs e)
         {
+            lblPasserelleCachee.Visible = false;
             txbIp.Enabled = false;
             txbNomMachine.Enabled = false;
             txbPasserelle.Enabled = false;
 
             System.Net.IPHostEntry localIP = System.Net.Dns.Resolve(System.Net.Dns.GetHostName());
-            txbIp.Text = localIP.AddressList.GetValue(1).ToString();
+            txbIp.Text = localIP.AddressList.GetValue(0).ToString();
 
             IPGlobalProperties computerProperties = IPGlobalProperties.GetIPGlobalProperties();
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -41,13 +42,29 @@ namespace scanneurReseauLocal
             lblAdresseTestee.Visible = false;
             lblAvancement.Visible = false;
 
+            String ipPourPasserelle = txbIp.Text;
+            String ipPasserelle = "";
+            int numPoint = 0;
+            for (int i = 0; i < ipPourPasserelle.Count(); ++i)
+            {
+                if (numPoint != 3)
+                {
+                    ipPasserelle += ipPourPasserelle[i];
+                }
+                if (ipPourPasserelle[i] == '.')
+                {
+                    ++ numPoint;
+                }
+            }
+            lblPasserelleCachee.Text = ipPasserelle;
+            txbPasserelle.Text = ipPasserelle + "0";
         }
 
         private void btnLancerLeScan_Click(object sender, EventArgs e)
         {
-            lancerScan();
+            lancerScan(lblPasserelleCachee.Text);
         }
-        public void lancerScan()
+        public void lancerScan(String ipPasserelle)
         {
             lblAdresseTestee.Visible = true;
             lblAvancement.Visible = true;
@@ -65,11 +82,15 @@ namespace scanneurReseauLocal
                 //MessageBox.Show("Boucle occurence " + i);
 
                 //MessageBox.Show("Occurence " + i);
-                String adresse = "192.168.1." + i;
+                String adresse = ipPasserelle + i;
                 lblAdresseTestee.Text = "Adresse testée : " + adresse;
                 int avancementInt = i + 1;
                 lblAvancement.Text = "Avancement " + avancementInt + " / 256";
-                Form.ActiveForm.Refresh();
+                if (Form.ActiveForm.GetType().ToString() == "scanneurReseauLocal.scanneurReseauLocal")
+                {
+                    Form.ActiveForm.Refresh();
+                }
+
                 try
                 {
 
