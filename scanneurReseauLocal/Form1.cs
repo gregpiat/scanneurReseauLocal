@@ -33,7 +33,7 @@ namespace scanneurReseauLocal
             txbPasserelle.Enabled = false;
 
             System.Net.IPHostEntry localIP = System.Net.Dns.Resolve(System.Net.Dns.GetHostName());
-            txbIp.Text = localIP.AddressList.GetValue(0).ToString();
+            txbIp.Text = localIP.AddressList.GetValue(1).ToString();
 
             IPGlobalProperties computerProperties = IPGlobalProperties.GetIPGlobalProperties();
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -86,10 +86,7 @@ namespace scanneurReseauLocal
                 lblAdresseTestee.Text = "Adresse testée : " + adresse;
                 int avancementInt = i + 1;
                 lblAvancement.Text = "Avancement " + avancementInt + " / 256";
-                if (Form.ActiveForm.GetType().ToString() == "scanneurReseauLocal.scanneurReseauLocal")
-                {
-                    Form.ActiveForm.Refresh();
-                }
+                this.Refresh();
 
                 try
                 {
